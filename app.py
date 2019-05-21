@@ -24,6 +24,7 @@ collection = db['congressman']
 # Route to render index.html template using data from Mongo
 @app.route("/")
 def home():
+<<<<<<< HEAD
     # Return template and data
     congress = mongo.db.collection.find()
     return render_template("index.html", congress=congress)
@@ -38,5 +39,21 @@ def data():
     return JSONEncoder().encode(congress_dict)
 
 
+<<<<<<< HEAD
+=======
+
+    # with open('data/legislators-historical.json') as data_file:
+    #     data = json.load(data_file)
+    # # Find one record of data from the mongo database
+    # for d in data:
+    #     collection.insert_one(d)  
+    # # Return template and data
+    # return render_template("index.html", congress_data=congress_data)
+    # congress_data = mongo.db.collection.find()
+    # return render_template("index.html", congress_data=congress_data)
+
+
+
+>>>>>>> app.py update
 if __name__ == "__main__":
     app.run(debug=True)
