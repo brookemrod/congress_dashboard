@@ -1,7 +1,14 @@
-from flask import Flask, render_template, redirect
+from flask import Flask, render_template, Response, jsonify
 from flask_pymongo import PyMongo
 from pymongo import MongoClient
 import json
+from bson import ObjectId
+
+class JSONEncoder(json.JSONEncoder):
+    def default(self, o):
+        if isinstance(o, ObjectId):
+            return str(o)
+        return json.JSONEncoder.default(self, o)
 
 # Create an instance of Flask
 app = Flask(__name__)
@@ -17,14 +24,19 @@ collection = db['congressman']
 # Route to render index.html template using data from Mongo
 @app.route("/")
 def home():
-    with open('data/legislators-historical.json') as data_file:
-        data = json.load(data_file)
-    # Find one record of data from the mongo database
-    for d in data:
-        collection.insert_one(d)  
     # Return template and data
-    congress_data = mongo.db.collection.find()
-    return render_template("index.html", congress_data=congress_data)
+    congress = mongo.db.collection.find()
+    return render_template("index.html", congress=congress)
+
+@app.route("/data")
+def data():
+    congress_dict = []
+    # Find one record of data from the mongo database
+    for results in db.congressman.find():
+        congress_dict.append(results)
+    
+    return JSONEncoder().encode(congress_dict)
+
 
 
 if __name__ == "__main__":
