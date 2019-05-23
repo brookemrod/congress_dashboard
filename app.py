@@ -25,8 +25,12 @@ collection = db['congressman']
 @app.route("/")
 def home():
 <<<<<<< HEAD
+<<<<<<< HEAD
     # Return template and data
 <<<<<<< HEAD
+=======
+    # Return template and data
+>>>>>>> data route working
     congress = mongo.db.collection.find()
     return render_template("index.html", congress=congress)
 
@@ -55,6 +59,10 @@ def data():
 
 
 
+<<<<<<< HEAD
 >>>>>>> app.py update
+=======
+
+>>>>>>> data route working
 if __name__ == "__main__":
     app.run(debug=True)
