@@ -1,5 +1,4 @@
-
-// Figure out a way to make the 
+// Figure out a way to make the graph, I guess
 var svgWidth = 960;
 var svgHeight = 500;
 
@@ -23,41 +22,49 @@ var chartGroup = svg.append("g")
   .attr("transform", `translate(${margin.left}, ${margin.top})`);
 
 
-//getSenators will take in the dataset and a year as a string, currently a console lo
-function getSenators(d, yearString) {
+//getSenators will take in the dataset and a year as a string, currently a console log
+function flattenSenators(d) {
   var i = 0;
-  var results = []
+  var flattened = []
   d.forEach(e => {
     e.terms.forEach(f => {
-      var formatYear = d3.timeFormat("%Y");
-      if (f.type == "sen" && parseInt(yearString, 10) >= parseInt(formatYear(new Date(f.start)), 10) &&
-        parseInt(yearString, 10) < parseInt(formatYear(new Date(f.end)), 10)) {
+      formatYear = d3.timeFormat("%Y");
+      if (f.type == "sen" /*&& parseInt(yearString, 10) >= parseInt(formatYear(new Date(f.start)), 10) &&
+        parseInt(yearString, 10) < parseInt(formatYear(new Date(f.end)), 10)*/) {
         var senator = {};
-        senator.name = e.name;
+        senator.name = `${e.name.first} ${e.name.last}`;
         senator.start = f.start;
         senator.end = f.end;
         senator.state = f.state;
         senator.party = f.party;
-        results.push(senator);
+        flattened.push(senator);
         console.log("-------------------------")
-        console.log(e.name);
-        console.log(f);
-        console.log(`start: ${parseInt(formatYear(new Date(f.start)), 10)}`);
-        console.log(parseInt(yearString, 10))
-        console.log(`end: ${parseInt(formatYear(new Date(f.end)), 10)}`)
+        console.log(senator.name);
+        console.log(senator.start);
+        console.log(senator.end);
+        console.log(`start: ${parseInt(formatYear(new Date(senator.start)), 10)}`);
+        console.log(`end: ${parseInt(formatYear(new Date(senator.end)), 10)}`);
         console.log(i);
         i = i + 1;
       }
     });
   });
-  return results;
+  return flattened;
 }
 
-//Import Data Using File Instead of Flask, for now
-d3.json("../static/data/legislators-historical.json",d => {
+d3.json("../static/data/legislators-historical.json",(err,d) => {
+  if(err) throw error;
   //Checking data to ensure that we get all the senators
       console.log(d);
-      console.log(getSenators(d,'1990'));
+      console.log(flattenSenators(d));
+
+      var ndx = crossfilter(d);
+
+      //Create Dimensions
+
+      //Create Groups
+
+});
 
 //Brooke's Code for Pie Chart
 
@@ -67,8 +74,8 @@ d3.json("../static/data/legislators-historical.json",d => {
 
 //Victor's Code for Slider
 
+//Import Data Using File Instead of Flask, for now
 
-});
 
 
 
