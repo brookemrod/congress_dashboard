@@ -23,6 +23,7 @@ def home():
     for d in data:
         collection.insert_one(d)  
     # Return template and data
+    congress_data = mongo.db.collection.find()
     return render_template("index.html", congress_data=congress_data)
 
 
