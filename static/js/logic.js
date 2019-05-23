@@ -54,7 +54,21 @@ function getSenators(d, yearString) {
 }
 
 //Import Data Using File Instead of Flask, for now
-d3.json("./data/legislators-historical.json",d => {
+d3.json("../static/data/legislators-historical.json",d => {
+  //Checking data to ensure that we get all the senators
       console.log(d);
-      console.log(getSenators(d,'1972'));
+      console.log(getSenators(d,'1990'));
+
+//Brooke's Code for Pie Chart
+
+
+//Jason's Code for Choropleth
+
+
+//Victor's Code for Slider
+
+
 });
+
+
+
