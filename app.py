@@ -37,6 +37,7 @@ def data():
     
     return JSONEncoder().encode(congress_dict)
 
+<<<<<<< HEAD
 
     # with open('data/legislators-historical.json') as data_file:
     #     data = json.load(data_file)
@@ -45,6 +46,8 @@ def data():
     #     collection.insert_one(d)  
     # # Return template and data
     # return render_template("index.html", congress_data=congress_data)
+=======
+>>>>>>> data route working
 
 
 if __name__ == "__main__":
