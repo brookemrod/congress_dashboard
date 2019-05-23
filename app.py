@@ -26,6 +26,7 @@ collection = db['congressman']
 def home():
 <<<<<<< HEAD
     # Return template and data
+<<<<<<< HEAD
     congress = mongo.db.collection.find()
     return render_template("index.html", congress=congress)
 
