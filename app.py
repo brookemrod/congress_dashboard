@@ -25,8 +25,12 @@ collection = db['congressman']
 @app.route("/")
 def home():
 <<<<<<< HEAD
+<<<<<<< HEAD
     # Return template and data
 <<<<<<< HEAD
+=======
+    # Return template and data
+>>>>>>> data route working
     congress = mongo.db.collection.find()
     return render_template("index.html", congress=congress)
 
@@ -50,6 +54,7 @@ def data():
     # return render_template("index.html", congress_data=congress_data)
     # congress_data = mongo.db.collection.find()
     # return render_template("index.html", congress_data=congress_data)
+
 
 
 
