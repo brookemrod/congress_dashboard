@@ -70,7 +70,13 @@ style
 }
 .legend .out-of-order {
   color: #007dff;
+<<<<<<< HEAD
 } */
+<<<<<<< HEAD
+=======
+=======
+}
+>>>>>>> Jason updates 5.27
 .states :hover {
   fill: red;
 }
@@ -83,3 +89,7 @@ style
   stroke-linecap: round;
   pointer-events: none;
 }
+<<<<<<< HEAD
+=======
+>>>>>>> Jason updates 5.27
+>>>>>>> Jason updates 5.27
