@@ -24,13 +24,7 @@ collection = db['congressman']
 # Route to render index.html template using data from Mongo
 @app.route("/")
 def home():
-<<<<<<< HEAD
-<<<<<<< HEAD
     # Return template and data
-<<<<<<< HEAD
-=======
-    # Return template and data
->>>>>>> data route working
     congress = mongo.db.collection.find()
     return render_template("index.html", congress=congress)
 
