@@ -43,11 +43,11 @@ p {
   padding: 5px;
   margin: 10px;
 }
-style
 
+style
 .legend {
   padding: 10px;
-  font-family: Arial;
+  font-family: Arial, Helvetica, sans-serif;
   font-size: 16px;
   font-weight: bold;
   line-height: 18px;
@@ -56,26 +56,21 @@ style
   border-radius: 5px;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
 }
-
 .legend .low {
   color: #ec8a2e;
 }
-
 .legend .empty {
   color: #a0353a;
 }
-
 .legend .coming-soon {
   color: #f4ba48;
 }
-
 .legend .healthy {
   color: #1b904f;
 }
-
 .legend .out-of-order {
   color: #007dff;
-}
+} */
 .states :hover {
   fill: red;
 }
