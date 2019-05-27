@@ -30,6 +30,34 @@
         </p>
         </div>
     </div>
+  <!-- Content -->
+  <div class="container">
+      <div class="row">
+            <div class="col-sm-1"><p id="value-time"></p></div>
+      </div>
+      <div class="row">
+        <div class="col-sm"><div id="slider-time"></div></div>
+      </div>
+  </div>
+  <div class="container">
+    <div class="row">
+        <!-- Summary -->
+        <div class="col-lg-8">
+            <h1>MAP</h1>
+            <div id="map-id"></div>
+        </div>
+        <!-- Vizualizations that link to each plot page -->
+        <div class="col-lg-4">
+            <div class="row">
+                <h1>Party Pie</h1>
+                <div id="party-pie"></div>
+            </div>
+            <div class="row">
+                <h1>Gender Pie</h1>
+                <div id="gender-pie"></div>
+            </div>
+        </div>
+    </div>
   
     <!-- Vizualizations that link to each plot page -->
     <div class="container">
@@ -77,6 +105,11 @@
   <!-- API Key -->
 
   <script type="text/javascript" src="../static/js/config.js"></script>
+
+  <!-- Simple Slider Reference -->
+
+  <script src="https://d3js.org/d3.v5.js"></script>
+  <script src="https://unpkg.com/d3-simple-slider"></script>
 
   <!-- Our JavaScript -->
   <script type="text/javascript" src="../static/js/logic.js"></script>
