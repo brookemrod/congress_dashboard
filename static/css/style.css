@@ -24,21 +24,21 @@ p {
 }
 
 #map-id {
-  width: 50%
+  width: 50%;
   height: 100%;
   padding: 5px;
   margin: 10px;
 }
 
 #party-pie {
-  width: 50%
+  width: 50%;
   height: 50%;
   padding: 5px;
   margin: 10px;
 }
 
 #gender-pie {
-  width: 50%
+  width: 50%;
   height: 50%;
   padding: 5px;
   margin: 10px;

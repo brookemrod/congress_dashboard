@@ -22,7 +22,7 @@ var chartGroup = svg.append("g")
   .attr("transform", `translate(${margin.left}, ${margin.top})`);
 
 
-//getSenators will take in the dataset and a year as a string, currently a console log
+//flattenSenators will take in the dataset and a year as a string, currently a console log
 function flattenSenators(d) {
   var i = 0;
   var flattened = []
@@ -337,7 +337,7 @@ var sliderTime = d3
   .max(d3.max(dataTime))
   .step(1000 * 60 * 60 * 24 * 365)
   .width(stwidth)
-  .ticks(30)
+  .ticks(50)
   .tickFormat(d3.timeFormat('%Y'))
   .tickValues(dataTime)
   .default(new Date(2018, 10, 3))
@@ -352,7 +352,7 @@ var gTime = d3
   .attr('width', stwidth)
   .attr('height', 100)
   .append('g')
-  .attr('transform', 'translate(0,30)');
+  .attr('transform', 'translate(40,30) scale (0.9 0.9)');
   //Fix transform and width attributes so that the slider doesn't get cut off.
   //Add fxn
 
