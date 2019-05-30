@@ -39,6 +39,16 @@ def data():
 
 
 
+    # with open('data/legislators-historical.json') as data_file:
+    #     data = json.load(data_file)
+    # # Find one record of data from the mongo database
+    # for d in data:
+    #     collection.insert_one(d)  
+    # # Return template and data
+    # return render_template("index.html", congress_data=congress_data)
+    # congress_data = mongo.db.collection.find()
+    # return render_template("index.html", congress_data=congress_data)
+
 
 if __name__ == "__main__":
     app.run(debug=True)
