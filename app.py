@@ -45,11 +45,8 @@ def data():
     #     collection.insert_one(d)  
     # # Return template and data
     # return render_template("index.html", congress_data=congress_data)
-<<<<<<< HEAD
     # congress_data = mongo.db.collection.find()
     # return render_template("index.html", congress_data=congress_data)
-=======
->>>>>>> app.py update
 
 
 if __name__ == "__main__":
