@@ -232,9 +232,9 @@ function loadChart() {
   var svgWidth = 960;
   var svgHeight = 600;
 
-  // var color_domain = [50, 150, 350, 750, 1500]
-  // // var ext_color_domain = [0, 50, 150, 350, 750, 1500]
-  // // var legend_labels = ["< 50", "50+", "150+", "350+", "750+", "> 1500"]  
+  var color_domain = [50, 150, 350, 750, 1500]
+  var ext_color_domain = [0, 50, 150, 350, 750, 1500]
+  var legend_labels = ["< 50", "50+", "150+", "350+", "750+", "> 1500"]  
   // var color = d3.scale.threshold()
   // .domain(color_domain)
   // .range(["#adfcad", "#ffcb40", "#ffba00", "#ff7d73", "#ff4e40", "#ff1300"]);
@@ -263,14 +263,14 @@ function loadChart() {
     .attr("transform", `translate(${margin.left}, ${margin.top})`);
 
   var path = d3.geoPath();
-  
-  // var projection = d3.geo.albers()
-  // .rotate([-105, 0])
-  // .center([-10, 65])
-  // .parallels([52, 64])
-  // .scale(700)
-  // .translate([width / 2, height / 2]);
-
+  /*
+  var projection = d3.geo.albers()
+  .rotate([-105, 0])
+  .center([-10, 65])
+  .parallels([52, 64])
+  .scale(700)
+  .translate([width / 2, height / 2]);
+*/
   d3.json("https://d3js.org/us-10m.v1.json", function (error, us) {
     if (error) throw error;
 
