@@ -38,6 +38,7 @@ def data():
     return JSONEncoder().encode(congress_dict)
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
     # with open('data/legislators-historical.json') as data_file:
     #     data = json.load(data_file)
@@ -49,6 +50,8 @@ def data():
 =======
 >>>>>>> data route working
 
+=======
+>>>>>>> ff7b064a1b1fd69e26d36840912056a2632a7c09
 
 if __name__ == "__main__":
     app.run(debug=True)
