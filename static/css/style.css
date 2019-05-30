@@ -49,6 +49,10 @@ body,
   margin: 10px;
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 9373efa3955a670e485b3ff40d2f64a432b02d45
 
 #party-pie {
   width: 50%;
@@ -57,6 +61,7 @@ body,
   margin: 10px;
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 #gender-pie {
   width: 50%;
@@ -70,6 +75,14 @@ style
 style
 >>>>>>> 5.27 changes
 >>>>>>> 5.27 changes
+=======
+=======
+style
+>>>>>>> 5.27 changes
+=======
+style
+>>>>>>> ff7b064a1b1fd69e26d36840912056a2632a7c09
+>>>>>>> 9373efa3955a670e485b3ff40d2f64a432b02d45
 .legend {
   padding: 10px;
   font-family: Arial, Helvetica, sans-serif;
@@ -98,7 +111,16 @@ style
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+} */
+=======
+}
+=======
+} */
+>>>>>>> 5.27 changes
+>>>>>>> 9373efa3955a670e485b3ff40d2f64a432b02d45
 .states :hover {
   fill: red;
 }
@@ -111,6 +133,7 @@ style
   stroke-linecap: round;
   pointer-events: none;
 }
+<<<<<<< HEAD
 =======
 } */
 >>>>>>> 5.27 changes
@@ -127,6 +150,11 @@ style
 } */
 >>>>>>> 5.27 changes
 >>>>>>> 5.27 changes
+=======
+>>>>>>> Jason updates 5.27
+=======
+} */
+>>>>>>> 9373efa3955a670e485b3ff40d2f64a432b02d45
 .states :hover {
   fill: red;
 }
@@ -139,8 +167,13 @@ style
   stroke-linecap: round;
   pointer-events: none;
 <<<<<<< HEAD
+<<<<<<< HEAD
 }
 =======
 }
 >>>>>>> Jason updates 5.27
 >>>>>>> Jason updates 5.27
+=======
+}
+>>>>>>> ff7b064a1b1fd69e26d36840912056a2632a7c09
+>>>>>>> 9373efa3955a670e485b3ff40d2f64a432b02d45
