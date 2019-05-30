@@ -37,6 +37,21 @@ def data():
     
     return JSONEncoder().encode(congress_dict)
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+
+    # with open('data/legislators-historical.json') as data_file:
+    #     data = json.load(data_file)
+    # # Find one record of data from the mongo database
+    # for d in data:
+    #     collection.insert_one(d)  
+    # # Return template and data
+    # return render_template("index.html", congress_data=congress_data)
+=======
+>>>>>>> data route working
+
+=======
+>>>>>>> ff7b064a1b1fd69e26d36840912056a2632a7c09
 
 if __name__ == "__main__":
     app.run(debug=True)
