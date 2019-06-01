@@ -13,7 +13,7 @@ var width = svgWidth - margin.left - margin.right;
 var height = svgHeight - margin.top - margin.bottom;
 
 // Create an SVG wrapper, append an SVG group that will hold our chart, and shift the latter by left and top margins.
-var svg = d3.select("#scatter")
+var svg = d3.select("#map-id")
   .append("svg")
   .attr("width", svgWidth)
   .attr("height", svgHeight);
@@ -75,37 +75,22 @@ function flattenSenators(d,yearString) {
         // if (senator.party == Object.keys(partyDict)){
         //   senator.partyID = partyDict.value}
         // else senator.partyID = 999
+        senator.gender = e.bio.gender;
         flattened.push(senator);
-        // console.log("-------------------------")
+        console.log("-------------------------")
         // console.log(senator.name);
         // console.log(senator.start);
         // console.log(senator.end);
         // console.log(`start: ${parseInt(formatYear(new Date(senator.start)), 10)}`);
-        // console.log(`end: ${parseInt(formatYear(new Date(senator.end)), 10)}`);
-        // console.log(i);
+        console.log(`end: ${parseInt(formatYear(new Date(senator.end)), 10)}`);
+        console.log(i);
         i = i + 1;
       }
     });
   });
   return flattened;
 }
-
-// d3.json("../static/data/legislators-historical.json",(err,d) => {
-//   if(err) throw error;
-//   //Checking data to ensure that we get all the senators
-//       console.log(d);
-//       console.log(flattenSenators(d, 2018));
-
-//       //var ndx = crossfilter(d);
-
-//       //Create Dimensions
-
-//       //Create Groups
-
-// });
-
 //Brooke's Code for Pie Chart
-
 
 //Jason's Code for Choropleth
 
@@ -180,14 +165,52 @@ stateDict = {"AL": "01","AK":"02","AZ":"04","AR":"05","CA":"06","CO":"08","CT":"
 "NH":"33","NJ":"34","NM":"35","NY":"36","NC":"37","ND":"38","OH":"39","OK":"40","OR":"41","PA":"42",
 "RI":"44","SC":"45","SD":"46","TN":"47","TX":"48","UT":"49","VT":"50","VA":"51","WA":"53","WV":"54","WY":"56"}
 
+//Define Unique Function
+function onlyUnique(value, index, self) { 
+  return self.indexOf(value) === index;
+}
+//Define Pie Chart Functions --------------------------------------------------------------------------------
+function genderPieData(data) {
+  var labelList = [];
+  data.forEach(d => {
+    labelList.push(d.gender);
+  });
+  var labels = labelList.filter(onlyUnique);
 
+  var counts = {};
+  labels.forEach(d=> counts[d] = 0);
+  labelList.forEach(d=>{
+    counts[d] = counts[d] + 1;
+  });
+  var values = Object.values(counts);
+  
+  return [labels,values];
+};
 
-//Victor's Code for Slider
-// Time
+function partyPieData(data) {
+  var labelList = [];
+  data.forEach(d => {
+    labelList.push(d.party);
+  });
+  var labels = labelList.filter(onlyUnique);
+
+  var counts = {};
+  labels.forEach(d=> counts[d] = 0);
+  labelList.forEach(d=>{
+    counts[d] = counts[d] + 1;
+  });
+  var values = Object.values(counts);
+  
+  return [labels,values];
+};
+
+//Victor's Code for Slider -----------------------------------------------------------------------------------
+//Define the time
 var dataTime = d3.range(0, 243).map(function(d) {
   return new Date(1776 + d, 10, 3);
 });
 
+//Define the Card Width as stwidth
 var stbb = document.querySelector ('#slider-time').getBoundingClientRect();
 var stwidth = stbb.right-stbb.left;
 
@@ -214,15 +237,34 @@ var gTime = d3
   .append('g')
   .attr('transform', 'translate(40,30) scale (0.9 0.9)');
   //Fix transform and width attributes so that the slider doesn't get cut off.
-  //Add fxn
 
 gTime.call(sliderTime);
 
 d3.select('p#value-time').text(d3.timeFormat('%Y')(sliderTime.value()));
 
+// Run the code ---------------------------------------------------------------------------------------------
+var blah = [];
+d3.json("../static/data/legislators-historical.json").then(d => {
+  blah = flattenSenators(d,'1810');
+  console.log(genderPieData(blah));
+  console.log(partyPieData(blah));
 
-//Import Data Using File Instead of Flask, for now
-
-
-
-
+  var partypiedata = [{
+    values: partyPieData(blah)[1],
+    labels: partyPieData(blah)[0],
+    type: 'pie'
+  }];
+  var genderpiedata = [{
+    values: genderPieData(blah)[1],
+    labels: genderPieData(blah)[0],
+    type: 'pie'
+  }];
+  
+  var layout = {
+    height: 90,
+    width: 90
+  };
+  
+  Plotly.newPlot('partypie', partypiedata, layout, {responsive:true});
+  Plotly.newPlot('genderpie', genderpiedata, layout, {responsive:true});
+});
