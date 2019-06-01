@@ -39,7 +39,10 @@ def data():
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 6.1 afternoon
     # with open('data/legislators-historical.json') as data_file:
     #     data = json.load(data_file)
     # # Find one record of data from the mongo database
@@ -51,6 +54,10 @@ def data():
     # return render_template("index.html", congress_data=congress_data)
 
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 6.1 afternoon
 
 >>>>>>> 5.29 additons
 if __name__ == "__main__":
