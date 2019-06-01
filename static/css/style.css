@@ -69,6 +69,7 @@ p {
 }
 .legend .out-of-order {
   color: #007dff;
+}
 
 .states :hover {
   fill: red;
