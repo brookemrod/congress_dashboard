@@ -1,36 +1,49 @@
 body {
-  background-color: white;
+  background-color: #708090;
+  font-family: Arial;
+  font-size: 40px;
 }
 
 h1 {
-  color: gray;
-  text-align: center;
+  color: darkslategray;
+  text-align: left;
+  font-family: Arial;
+  font-size: 50px;
 }
 
-p {
-  font-family: verdana;
+h2 {
+  color: white;
+  text-align: center;
+  font-family: Arial;
+  font-size: 40px;
+}
+
+p {  
+  font-family: Arial;
   font-size: 20px;
 }
 
-
-/* html,
-body,
 #map-id {
+  width: 50%;
   height: 100%;
-  padding: 0;
-  margin: 0;
+  padding: 5px;
+  margin: 10px;
 }
-<<<<<<< HEAD
-<<<<<<< HEAD
 
-style
+#party-pie {
+  width: 50%;
+  height: 50%;
+  padding: 5px;
+  margin: 10px;
+}
 
-=======
-style
->>>>>>> 5.27 changes
-=======
-style
->>>>>>> ff7b064a1b1fd69e26d36840912056a2632a7c09
+#gender-pie {
+  width: 50%;
+  height: 50%;
+  padding: 5px;
+  margin: 10px;
+}
+
 .legend {
   padding: 10px;
   font-family: Arial, Helvetica, sans-serif;
@@ -56,12 +69,7 @@ style
 }
 .legend .out-of-order {
   color: #007dff;
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-} */
+}
 
 .states :hover {
   fill: red;
