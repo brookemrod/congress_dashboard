@@ -41,6 +41,7 @@ def data():
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> 6.1 afternoon
@@ -49,6 +50,13 @@ def data():
 
     # with open('/static/data/legislators-historical.json') as data_file:
 >>>>>>> Added Pie Chart Functionality and fixed some formatting
+=======
+
+    # with open('/static/data/legislators-historical.json') as data_file:
+=======
+    # with open('data/legislators-historical.json') as data_file:
+>>>>>>> Jason
+>>>>>>> Commit pie chart changes and merge with Jason's changes
     #     data = json.load(data_file)
     # # Find one record of data from the mongo database
     # for d in data:
