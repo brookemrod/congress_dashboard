@@ -113,7 +113,7 @@ var senatorData = [{id: "01", population: 4830620}, {id: "02", population: 73337
 
 
 var listData = [];
-d3.json("../static/data/legislators-historical.json").then(d => {
+d3.json("mongodb://localhost:27017/congress_app").then(d => {
   //Checking data to ensure that we get all the senators
   // console.log('hello world')
   // console.log(d);
