@@ -38,8 +38,12 @@ def data():
     return JSONEncoder().encode(congress_dict)
 
 
+<<<<<<< HEAD
 
     # with open('/static/data/legislators-historical.json') as data_file:
+=======
+    # with open('data/legislators-historical.json') as data_file:
+>>>>>>> Jason
     #     data = json.load(data_file)
     # # Find one record of data from the mongo database
     # for d in data:

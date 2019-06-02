@@ -1,4 +1,3 @@
-// Figure out a way to make the graph, I guess
 var svgWidth = 960;
 var svgHeight = 500;
 
@@ -22,7 +21,7 @@ var chartGroup = svg.append("g")
   .attr("transform", `translate(${margin.left}, ${margin.top})`);
 
 
-//flattenSenators will take in the dataset and a year as a string, currently a console log
+//flattenSenators will take in the dataset and a year and update the graphs accordingly ----------------------------------------------
 function flattenSenators(d,yearString) {
   var i = 0;
   var flattened = []
@@ -72,7 +71,7 @@ function flattenSenators(d,yearString) {
         else if (senator.party == "Democrat"){
           senator.partyID = 1
         }
-        else (senator.party = 11);
+        else {senator.party = 11};
         // if (senator.party == Object.keys(partyDict)){
         //   senator.partyID = partyDict.value}
         // else senator.partyID = 999
@@ -96,7 +95,6 @@ function flattenSenators(d,yearString) {
 
 var senatorData = [{id: "01", population: 4830620}, {id: "02", population: 733375}, {id: "04", population: 6641928}, {id: "05", population: 2958208}, {id: "06", population: 38421464}, {id: "08", population: 5278906}, {id: "09", population: 3593222}, {id: "10", population: 926454}, {id: "11", population: 647484}, {id: "12", population: 19645772}, {id: "13", population: 10006693}, {id: "15", population: 1406299}, {id: "16", population: 1616547}, {id: "17", population: 12873761}, {id: "18", population: 6568645}, {id: "19", population: 3093526}, {id: "20", population: 2892987}, {id: "21", population: 4397353}, {id: "22", population: 4625253}, {id: "23", population: 1329100}, {id: "24", population: 5930538}, {id: "25", population: 6705586}, {id: "26", population: 9900571}, {id: "27", population: 5419171}, {id: "28", population: 2988081}, {id: "29", population: 6045448}, {id: "30", population: 1014699}, {id: "31", population: 1869365}, {id: "32", population: 2798636}, {id: "33", population: 1324201}, {id: "34", population: 8904413}, {id: "35", population: 2084117}, {id: "36", population: 19673174}, {id: "37", population: 9845333}, {id: "38", population: 721640}, {id: "39", population: 11575977}, {id: "40", population: 3849733}, {id: "41", population: 3939233}, {id: "42", population: 12779559}, {id: "44", population: 1053661}, {id: "45", population: 4777576}, {id: "46", population: 843190}, {id: "47", population: 6499615}, {id: "48", population: 26538614}, {id: "49", population: 2903379}, {id: "50", population: 626604}, {id: "51", population: 8256630}, {id: "53", population: 6985464}, {id: "54", population: 1851420}, {id: "55", population: 5742117}, {id: "56", population: 579679}, {id: "72", population: 3583073}];
 
-
 var listData = [];
 d3.json("../static/data/legislators-historical.json").then(d => {
   //Checking data to ensure that we get all the senators
@@ -115,13 +113,6 @@ d3.json("../static/data/legislators-historical.json").then(d => {
 
 var chart = new d3plus.Geomap()
 .config({
-  // data: listData,
-  // groupBy: "slug",
-  // colorScale: "dma_code",
-
-  // point: function(d) {
-  //   return [d.longitude, d.latitude];
-  // },
   zoom: false
 })
   .data(listData)
@@ -173,7 +164,7 @@ stateDict = {"AL": "01","AK":"02","AZ":"04","AR":"05","CA":"06","CO":"08","CT":"
 //       if (f.party == "Democrat"){
 //         colorscale = 3
 
-// When the browser loads, loadChart() is called
+// When the browser loads, loadChart() is called---------------------------------------------------------------------------------
 loadChart();
 
 // Define responsive function
@@ -186,10 +177,9 @@ function makeResponsive() {
     svgArea.remove();
     loadChart();
   }
-
-
-
 }
+
+//Load Chart Function loads the geoJSON -----------------------------------------------------------------------------------------
 function loadChart() {
   var svgWidth = 960;
   var svgHeight = 600;
@@ -278,7 +268,7 @@ function loadChart() {
 function onlyUnique(value, index, self) { 
   return self.indexOf(value) === index;
 }
-//Define Pie Chart Functions ----------------------------------------------------------------------------------------
+//Define Pie Chart Functions ----------------------------------------------------------------------------------------------------
 function genderPieData(data) {
   var labelList = [];
   data.forEach(d => {
