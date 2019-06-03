@@ -39,39 +39,36 @@
             <h1>Congressional Visualization</h1>
             <p>
                 Who has served in the U.S. Senate? This dashboard provides a visual representation of the party and
-                gender make-up of U.S. Senate from 1789 through our most recent election in 2018
-            </p>
-            <p>
-                <input class="btn btn-outline-dark" type="reset" value="Reset">
+                gender make-up of U.S. Senate from 1789 through 2018.
             </p>
         </div>
     </div>
 
-    <div class="container">
+    <!-- <div class="container">
       <div class="row">
             <div class="col-sm-1"><p id="value-time"></p></div>
       </div>
       <div class="row">
         <div class="col-sm"><div id="slider-time"></div></div>
       </div>
-    </div>
+    </div> -->
 
-    <div class="container">
+    <!-- <div class="container">
         <div id="viz"> </div>
-    <div class="row">
+    <div class="row"> -->
         <!-- Summary -->
-        <div class="col-lg-8">
+        <!-- <div class="col-lg-8">
             <h1>MAP</h1>
             <div id="map-id"></div>
         </div>
-    </div>
+    </div> -->
 
 
         <!-- Vizualizations that link to each plot page -->
         <div class="container">
             <div class="row">
-                <div class="col-sm-1">
-                    <p id="value-time"></p>
+                <div class="col-sm-12">
+                    <p>Selected Year:</p><p id="value-time"></p>
                 </div>
             </div>
             <div class="card bg-dark text-white">
@@ -80,27 +77,26 @@
         </div>
 
         <div class="container">
-            <div class="card border-dark mb-3" style="max-width: 72rem;">
-                <div class="card-header">U.S. Map of Senators</div>
-                <div class="card-body">
-                    <div id="viz"></div>
-                </div>
-            </div>
-        </div>
-
-        <div class="container">
             <div class="card-deck">
                 <div class="card text-white bg-dark mb-3" style="max-width: 36rem;">
-                    <div class="card-header">party</div>
+                    <div class="card-header">Party Affiliation</div>
                     <div class="card-body">
                         <div id="partypie"></div>
                     </div>
                 </div>
                 <div class="card text-white bg-dark mb-3" style="max-width: 36rem;">
-                    <div class="card-header">gender</div>
+                    <div class="card-header">Gender Makeup</div>
                     <div class="card-body">
                         <div id="genderpie"></div>
                     </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="card border-dark mb-3" style="max-width: 72rem;">
+                <div class="card-header">Map of U.S. Senators</div>
+                <div class="card-body">
+                    <div id="viz"></div>
                 </div>
             </div>
         </div>
