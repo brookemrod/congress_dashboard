@@ -76,7 +76,7 @@ function flattenSenators(d,yearString) {
 
 var listData = [];
 
-d3.json("../static/data/legislators-historical.json").then(d => {
+d3.json("mongodb://localhost:27017/congress_app").then(d => {
   //Checking data to ensure that we get all the senators
   // console.log('hello world')
   // console.log(d);
@@ -219,7 +219,7 @@ gTime.call(sliderTime);
 d3.select('p#value-time').text(d3.timeFormat('%Y')(sliderTime.value()));
 
 // Run the code ---------------------------------------------------------------------------------------------
-d3.json("../static/data/legislators-historical.json").then(d => {
+d3.json("mongodb://localhost:27017/congress_app").then(d => {
   var blah = flattenSenators(d,'1900');
   console.log(genderPieData(blah));
   console.log(partyPieData(blah));
