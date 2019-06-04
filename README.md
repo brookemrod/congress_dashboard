@@ -24,3 +24,17 @@ Joon Yoo's Oaho real estate dashboard
 ## GitHub Repository
 
 [https://github.com/brookemrod/congress_dashboard]
+
+## Requirments Met
+
+* Python Flask-powered RESTful API, HTML/CSS, JS, MongoDB
+
+* Dashboard with three charts that update from the same data
+
+* Additional JavaScript libraries used - D3plus + TopoJSON
+
+* Data set has ~10k records
+
+* User-driven interaction via slider
+
+* Visualization includes three charts/views of data
