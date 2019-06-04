@@ -25,7 +25,7 @@ Joon Yoo's Oaho real estate dashboard
 
 [https://github.com/brookemrod/congress_dashboard]
 
-## Requirments Met
+## Requirements Met
 
 * Python Flask-powered RESTful API, HTML/CSS, JS, MongoDB
 
