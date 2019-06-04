@@ -3,7 +3,7 @@
 ## Topic + Rational
 
 Who has served in the U.S. Senate?
-This dashboard will provide a visual representation of the party and gender make-up of U.S. Senate from 1789 through our most recent election in 2018.
+This dashboard will provide a visual representation of the party and gender make-up of U.S. Senate from 1789 through 2018.
 
 ## Data Set
 
