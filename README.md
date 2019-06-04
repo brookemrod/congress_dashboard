@@ -31,7 +31,7 @@ Joon Yoo's Oaho real estate dashboard
 
 * Dashboard with three charts that update from the same data
 
-* Additional JavaScript libraries used - D3plus + TopoJSON
+* Additional JavaScript libraries used - D3, D3plus, GeoJSON and Plotly
 
 * Data set has ~10k records
 
